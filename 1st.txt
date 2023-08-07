@@ -1,4 +1,4 @@
-1st
+```1st
 clear 
 if [ $# -ne 1 ]
 then
@@ -7,7 +7,7 @@ else
 mkdir -p $1
 fi
 
-2nd
+```2nd
 clear 
 if [ "$#" -ne 2 ]
 then
@@ -26,7 +26,7 @@ cat file1
 echo the permisson of file$2
 cat file2
 
-3rd'
+```3rd'
 clear
 if [ $# -eq 0 ]
 then echo "no command line argument passes"
@@ -45,7 +45,7 @@ cat /etc/passwd | grep "$1" | cut -d ':' -f6
 fi
 shift done
 
-4th
+```4th
 clear
 echo enter a filname:\c
 read fn
@@ -71,7 +71,8 @@ echo filename
 echo `ls-l $fn | cut -d ' ' -f10'
 else
 echo file not found 
-5th
+
+```5th
 #! /bin/bash
 clear
 if [ $# -eq 0 ]
@@ -89,7 +90,7 @@ echo file not found
 fi
 done
 
-6th
+```6th
 #! /bin/bash
 clear
 if [ $# -ne 1 ]
@@ -104,7 +105,7 @@ else
 echo file not found
 fi
 
-7th
+```7th
 clear
 a=`date +%e`
 if [ $a -lt 10 ]
@@ -116,7 +117,7 @@ cal | sed s/$a/**/
 echo $a
 fi
 
-8th
+```8th
 #! bin/bash
 clear
 echo `list > listfiles`
@@ -131,7 +132,7 @@ continue
 fi
 done
 
-9th
+```9th
 #! bin/bash
 clear
 h=`who am i | tr -s " " | cut -d " " -f5 | cut -d ":" -f1' or h=$(date "% H")
