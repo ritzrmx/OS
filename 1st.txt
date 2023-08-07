@@ -1,0 +1,149 @@
+1st
+clear 
+if [ $# -ne 1 ]
+then
+echo "invalid number of arguments"
+else
+mkdir -p $1
+fi
+
+2nd
+clear 
+if [ "$#" -ne 2 ]
+then
+echo "invalid number of arguments"
+else
+ls -l $1 | cut -d ' ' -f1 > file1
+ls -l $1 | cut -d ' ' -f1 > file2
+if cmp file1 file2
+then
+echo "\n both file have same permission \n"
+cat file1
+else
+echo "\n file have diff permission \n"
+echo the permission of file$1
+cat file1
+echo the permisson of file$2
+cat file2
+
+3rd'
+clear
+if [ $# -eq 0 ]
+then echo "no command line argument passes"
+exit
+fi
+while[$1]
+do
+cat /etc/passwd | cut -d ':' -f1 | grep  ^$1 >temp
+ck =`cat temp`
+if [ $ck !=$1 ]
+then
+echo error:$1 is an invalid log in name
+else
+echo home directory for $1 is:
+cat /etc/passwd | grep "$1" | cut -d ':' -f6
+fi
+shift done
+
+4th
+clear
+echo enter a filname:\c
+read fn
+if [ -f $fn ]
+then
+echo file permission are
+echo `ls-l $fn | cut -d ' ' -f1`
+echo number of links to the file 
+echo `ls-l $fn | cut -d ' ' -f3`
+echo owner name
+echo `ls-l $fn | cut -d ' ' -f4`
+echo group name
+echo `ls-l $fn | cut -d ' ' -f5`
+echo filesize 
+echo `ls-l $fn | cut -d ' ' -f6`
+echo last modiefied month
+echo `ls-l $fn | cut -d ' ' -f7`
+echo last modified date
+echo `ls-l $fn | cut -d ' ' -f8`
+echo last modiefied time
+echo `ls-l $fn | cut -d ' ' -f9`
+echo filename
+echo `ls-l $fn | cut -d ' ' -f10'
+else
+echo file not found 
+5th
+#! /bin/bash
+clear
+if [ $# -eq 0 ]
+then
+echo invalid no of argument
+exit
+fi
+for fn in "$@" all argument
+do
+if [ -f $fn ]
+then
+echo $fn | tr `[a-z]' '[A-Z]'
+else
+echo file not found
+fi
+done
+
+6th
+#! /bin/bash
+clear
+if [ $# -ne 1 ]
+then 
+echo invalid number of argument
+exit
+fi
+if [ -e $1 ]
+then 
+echo file $1 is created on :`ls -l $! | tr -s " " | cut -d " " -f6,f8`
+else
+echo file not found
+fi
+
+7th
+clear
+a=`date +%e`
+if [ $a -lt 10 ]
+then
+echo $a
+cal | sed s/$a/*/
+else
+cal | sed s/$a/**/
+echo $a
+fi
+
+8th
+#! bin/bash
+clear
+echo `list > listfiles`
+echo the file with character greater than 9
+for i in `cat listfiles`
+do
+len=`expr length $i'
+if [ $len -gt 9 ]
+then echo $i
+else
+continue
+fi
+done
+
+9th
+#! bin/bash
+clear
+h=`who am i | tr -s " " | cut -d " " -f5 | cut -d ":" -f1' or h=$(date "% H")
+if [ $sh -lt 12 ]
+then 
+echo
+good morning 
+elif [ $sh -ge 12 -a $sh -lt 17 ]
+then
+echo good afternoon 
+else
+good evening
+fi
+
+
